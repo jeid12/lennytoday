@@ -1,0 +1,20 @@
+{
+  "blogs": [
+    {
+      "id": "9bff",
+      "title": "With Willie Mays gone, who is baseball's greatest living player?",
+      "description": "Before his death Tuesday, Willie Mays was widely viewed as Major League Baseball's greatest living player.\n\nMays hit 660 career home runs and had numerous iconic plays, including \"The Catch\" in Game 1 of the 1954 World Series, placing him among the game's best.\n\nOn Wednesday, the Boston Globe's Bob Ryan pondered this question: \nKoufax is the only pitcher in MLB history to lead the league in wins, earned run average and strikeouts three times in his three Cy Young Award-winning seasons. For the final five years of his 12-year career, he was the best pitcher in baseball, posting a 1.95 ERA in 181 games (176 starts) from 1962-66.",
+      "categories": "Sports",
+      "imageurl": "https://res.cloudinary.com/dxufhhhbl/image/upload/v1718866415/vzy92bl67n4g9hprjocp.jpg",
+      "date": "06/20/2024"
+    },
+    {
+      "id": "93ec",
+      "title": "Brittney Griner Makes Strong Statement After WNBA Announcement",
+      "description": "Fresh off returning from injury, Brittney Griner quickly made her impact felt on the Phoenix Mercury. Now, she gave everyone a preview of her mindset that fueled her spectacular play on the court.\n\nGriner made her season debut for the Mercury on June 7 against the Minnesota Lynx after recovering from a fractured toe; and she immediately became a game-changer for the franchise. In fact, in the two games she played from June 10 to 16, she averaged 26.5 points, 9.0 rebounds, 1.5 assists and 2.0 blocks. As a result, she was named the Player of the Week for the West, along with Aliyah Boston for the East.\n\n",
+      "categories": "Technology",
+      "imageurl": "https://res.cloudinary.com/dxufhhhbl/image/upload/v1718877512/gg3wan8l40hupczgewza.jpg",
+      "date": "06/20/2024"
+    }
+  ]
+}
