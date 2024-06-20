@@ -4,9 +4,14 @@ import React, { useState, useEffect } from 'react';
 import { MDBRow, MDBCol, MDBContainer, MDBTypography } from 'mdb-react-ui-kit';
 import { toast } from 'react-toastify';
 import Blogs from '../components/Blogs';
+import Search from '../components/Search';
+import Category from '../components/Category';
 
 function Home() {
   const [data, setData] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
+
+  const options = ["Travel", "Fashion", "Sports", "Food", "Technology"];
 
   useEffect(() => {
     loadBlogsData();
@@ -51,8 +56,32 @@ function Home() {
     return str;
   };
 
+
+  const onInputChange = (e) => {
+    setSearchValue(e.target.value);
+    if (!e.target.value) {
+      loadBlogsData();
+    }
+  };
+
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.get(`http://localhost:5000/blogs?q=${searchValue}`);
+      if (response.status === 200) {
+        setData(response.data);
+      } else {
+        toast.error("Something went wrong??");
+      }
+    } catch (error) {
+      console.error('Error fetching data', error);
+      toast.error("Something went wrong??");
+    }
+  };
   return (
     <>
+   <Search searchValue={searchValue} onInputChange={onInputChange} handleSearch={handleSearch} />
       <MDBRow>
         {data.length === 0 && (
           <MDBTypography className='text-center mb-0' tag="h2">
@@ -72,6 +101,9 @@ function Home() {
               ))}
             </MDBRow>
           </MDBContainer>
+        </MDBCol>
+        <MDBCol size="3" >
+        <Category options={options} handleCategory={handleCategory} />
         </MDBCol>
       </MDBRow>
     </>
