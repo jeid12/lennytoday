@@ -34,7 +34,7 @@ function AddEdetBlog() {
     } ,[id])
 
     const getSingleBlog =  async (id)=>{
-        const singleBlog = await  axios.get(`http://localhost:5000/blogs/${id}`)
+        const singleBlog = await  axios.get(`https://lennytodaydata.onrender.com/blogs/${id}`)
 
         if (singleBlog.status === 200){
         setFormValue({...singleBlog.data});
@@ -69,7 +69,7 @@ function AddEdetBlog() {
 
             if(!editMode){
                 const updatedBlogData = {...formValue, date:currentDate}
-                const response = await axios.post("http://localhost:5000/blogs",updatedBlogData);
+                const response = await axios.post("https://lennytodaydata.onrender.com/blogs",updatedBlogData);
                 if (response.status=== 201){
                     toast.success("Blog added successfully!");
                 }else{
@@ -78,7 +78,7 @@ function AddEdetBlog() {
                 }
                 
             }else{
-                const response = await axios.put(`http://localhost:5000/blogs/${id}`,formValue);
+                const response = await axios.put(`https://lennytodaydata.onrender.com/blogs/${id}`,formValue);
                 if (response.status=== 200){
                     toast.success("Blog updated successfully!");
                 }else{

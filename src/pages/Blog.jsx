@@ -17,8 +17,8 @@ const Blog = () => {
 
   const getSingleBlog = useCallback(async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/blogs/${id}`);
-      const relatedPostData = await axios.get(`http://localhost:5000/blogs/?categories=${response.data.categories}&_start=0&_end=3`);
+      const response = await axios.get(`https://lennytodaydata.onrender.com/blogs/${id}`);
+      const relatedPostData = await axios.get(`https://lennytodaydata.onrender.com/blogs/?categories=${response.data.categories}&_start=0&_end=3`);
 
       if (response.status === 200) {
         setBlog(response.data);

@@ -22,7 +22,7 @@ function Home() {
 
   const loadBlogsData = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/blogs");
+      const response = await axios.get("https://lennytodaydata.onrender.com/blogs");
       console.log('response', response);
       if (response.status === 200) {
         setData(response.data);
@@ -36,11 +36,11 @@ function Home() {
   };
 
   const fetchLatestBlog=async () =>{
-      const totalBlog = await axios.get("http://localhost:5000/blogs");
+      const totalBlog = await axios.get("https://lennytodaydata.onrender.com/blogs");
       const start = totalBlog.data.length -4;
       const end = totalBlog.data.length;
 
-      const response = await axios.get(`http://localhost:5000/blogs?_start=${start}&_end=${end}`);
+      const response = await axios.get(`https://lennytodaydata.onrender.com/blogs?_start=${start}&_end=${end}`);
       if (response.status === 200) {
         setLatestBlog(response.data);
       } else {
@@ -53,7 +53,7 @@ function Home() {
   const handleDelete = async (id) => {
     // Handle delete logic
     if(window.confirm("are you sure you want to delete that blog??")){
-      const response = await axios.delete(`http://localhost:5000/blogs/${id}`);
+      const response = await axios.delete(`https://lennytodaydata.onrender.com/blogs/${id}`);
       console.log('response', response);
       if (response.status === 200) {
        toast.success("blog deleted sucessfully!")
@@ -84,7 +84,7 @@ function Home() {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(`http://localhost:5000/blogs?q=${searchValue}`);
+      const response = await axios.get(`https://lennytodaydata.onrender.com/blogs?q=${searchValue}`);
       if (response.status === 200) {
         setData(response.data);
       } else {
@@ -97,7 +97,7 @@ function Home() {
   };
 
   const handleCategory = async (category) =>{
-    const response  =await axios.get(`http://localhost:5000/blogs/?categories=${category}`);
+    const response  =await axios.get(`https://lennytodaydata.onrender.com/blogs/?categories=${category}`);
     if(response.status === 200){
       setData(response.data)
     }else{
